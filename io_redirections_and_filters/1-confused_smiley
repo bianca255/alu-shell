@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "(Ôo)'"
-
+echo "hello MyUser$user"
