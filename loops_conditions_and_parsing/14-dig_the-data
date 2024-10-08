@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Using awk to parse and sort the apache-access.log
+awk '{print $1, $9}' apache-access.log | \
+awk '{
+    count[$1][$2]++;
+}
+END {
+    for (ip in count) {
+        for (code in count[ip]) {
+            print count[ip][code], ip, code;
+        }
+    }
+}' | sort -nr | column -t
+
