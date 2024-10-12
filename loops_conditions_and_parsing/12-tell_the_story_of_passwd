@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
+# Script to display the content of /etc/passwd in a story format, following ShellCheck guidelines
 
-# This script tells a story based on the /etc/passwd file
-
-IFS=:  # Set the internal field separator to colon
-while read -r username password uid gid full_name home shell; do
-    # Format and display the information
-    echo "The user $username is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the passcode $password, more info about the user here: $full_name"
+while IFS=':' read -r username password uid gid info home shell; do
+    echo "The user $username is part of the $gid gang,"\
+         "lives in $home and rides $shell."\
+         "$uid's place is protected by the passcode $password,"\
+         "more info about the user here: $info"
 done < /etc/passwd
-
