@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# Displays the current running processes, in a user-oriented format.
-ps -faux
+# Script to display its own PID
+echo "The PID of this script is: $$"
+

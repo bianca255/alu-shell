@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-# Script to display processes containing the word "bash"
-
-# shellcheck disable=SC2009
-ps -ef --forest | grep bash
+# Displays the current running processes, in a user-oriented format.
+ps -faux
