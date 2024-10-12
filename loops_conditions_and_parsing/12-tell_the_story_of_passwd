@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# This script tells a story about users from /etc/passwd
+# Script to display the content of /etc/passwd in a story format, following ShellCheck guidelines
 
-# Read the /etc/passwd file line by line
-while IFS=: read -r username _ user_id _ home_directory shell _; do
-    echo "The user $username is part of the $user_id gang, lives in $username and rides $home_directory. $user_id's place is protected by the passcode x, more info about the user here: $username"
+while IFS=':' read -r username password uid gid info home shell; do
+    echo "The user $username is part of the $gid gang,"\
+         "lives in $home and rides $shell."\
+         "$uid's place is protected by the passcode $password,"\
+         "more info about the user here: $info"
 done < /etc/passwd
 

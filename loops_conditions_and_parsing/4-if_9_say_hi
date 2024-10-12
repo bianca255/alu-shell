@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# This script displays "Best School" 10 times, saying "Hi" on the 9th iteration
+# Script to display "Best School" 10 times with special case for the 9th iteration
 
 count=1
+
 while [ $count -le 10 ]
 do
+  if [ $count -eq 9 ]; then
     echo "Best School"
-    if [ $count -eq 9 ]; then
-        echo "Hi"
-    fi
-    count=$((count + 1))
+    echo "Hi"
+  else
+    echo "Best School"
+  fi
+  count=$((count + 1))
 done
 
