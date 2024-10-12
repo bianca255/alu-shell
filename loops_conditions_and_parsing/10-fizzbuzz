@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
-# This script displays numbers from 1 to 100 with FizzBuzz logic
+# FizzBuzz script to display numbers from 1 to 100 with specific rules
 
-for (( i=1; i<=100; i++ )); do
-    if (( i % 3 == 0 && i % 5 == 0 )); then
+num=1
+
+while [ "$num" -le 100 ]; do
+    if [ $((num % 3)) -eq 0 ] && [ $((num % 5)) -eq 0 ]; then
         echo "FizzBuzz"
-    elif (( i % 3 == 0 )); then
+    elif [ $((num % 3)) -eq 0 ]; then
         echo "Fizz"
-    elif (( i % 5 == 0 )); then
+    elif [ $((num % 5)) -eq 0 ]; then
         echo "Buzz"
     else
-        echo "$i"
+        echo "$num"
     fi
+    num=$((num + 1))
 done
 

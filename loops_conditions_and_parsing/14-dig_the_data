@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Using awk to process the apache-access.log file
-awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr | awk '{print $1, $2, $3}'
-
